@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Booking</title>
+</head>
+
+<body style="text-align:center; font-family:Arial;">
+
+<h1>Book Your Ticket</h1>
+
+<label>Select Movie:</label>
+<select>
+<option>Avatar</option>
+<option>Pushpa 2</option>
+<option>War</option>
+</select>
+
+<br><br>
+
+<h3>Select Seats</h3>
+
+<button onclick="selectSeat(this)">A1</button>
+<button onclick="selectSeat(this)">A2</button>
+<button onclick="selectSeat(this)">A3</button>
+
+<br><br>
+
+<button onclick="bookTicket()">Book Now</button>
+
+<p id="message"></p>
+
+<script>
+let selected = 0;
+
+function selectSeat(btn){
+if(btn.style.backgroundColor === "green"){
+btn.style.backgroundColor = "";
+selected--;
+}else{
+btn.style.backgroundColor = "green";
+selected++;
+}
+}
+
+function bookTicket(){
+if(selected === 0){
+alert("Please select at least one seat!");
+}else{
+document.getElementById("message").innerHTML = "✅ Ticket Booked Successfully!";
+}
+}
+</script>
+
+<br><br>
+
+<a href="index.html">Go Back</a>
+
+</body>
+</html>
